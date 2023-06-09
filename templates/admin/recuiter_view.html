@@ -1,0 +1,63 @@
+{% extends "index.html" %}
+{%block content%}
+ <div >
+<div class="card text-center mb-3  ">
+  <div class="card-body card card-light-blue ">
+<!--      <form method="get" class="form-inline">-->
+<!--          <div class="md-form my-0">-->
+<!--              {{worker_filter.form}}-->
+
+<!--              <button class="btn btn-primary" type="submit">Search</button>-->
+<!--          </div>-->
+<!--      </form>-->
+
+<!--</form>-->
+<div class="table-responsive">
+
+  <table class="table align-middle table table-bordered">
+
+  <thead>
+
+    <tr>
+
+      <th scope="col">CompanyName</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+      <th scope="col">phone</th>
+      <th scope="col">RegistrationNo</th>
+      <th scope="col">Job</th>
+      <th scope="col">Confirmation</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in data %}
+    <tr>
+      <td scope="row">{{i.companyname}}</td>
+      <td scope="row">{{i.email}}</td>
+      <td scope="row">{{i.address}}</td>
+      <td scope="row">{{i.phone}}</td>
+      <td scope="row">{{i.registrationNo}}</td>
+      <td scope="row">{{i.jobTitle}}</td>
+  <td scope="row">
+            {% if i.status == 0 %}
+            <a class="btn btn-primary" href="{% url 'accept_recuiter' i.id %}" role="button">Accept Recuiter</a>
+            <a class="btn btn-primary" href="{% url 'reject_recuiter' i.id %}" role="button">Reject Recuiter</a>
+            {%elif i.status == 1 %}
+            <a class="btn btn-primary" href="{% url 'accept_recuiter' i.id %}" role="button">Accepted</a>
+            {% else %}
+            <a class="btn btn-primary" href="{% url 'reject_recuiter' i.id %}" role="button">Rejected</a>
+            {% endif %}
+        </td>
+
+    </tr>
+
+  </tbody>
+      {% endfor %}
+ </table>
+{% endblock %}
+</div>
+
+  </div>
+</div>
+ </div>

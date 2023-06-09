@@ -1,0 +1,84 @@
+{% extends "jobseeker/new/Modified_files/index.html" %}
+{%load crispy_forms_tags %}
+{% block content %}
+
+
+{% for job in job %}
+ <div class="row h-100 m-lg-7 mx-3 mt-6 mx-md-4 my-md-7">
+                  <div class="card py-4 px -3 shadow-sm ">
+                    <div class="text-center">
+                      <div class="card-body px-2">
+                       <h3><b>{{jobTitle}}</b></h3>
+            <p>{{job.companyname}}</p>
+            <p>{{job.jobTitle}}</p>
+            <p>{{job.salary}}</p>
+            <p>{{job.location}}</p>
+           <p>{{job.date}}</p>
+            <a class="btn btn-primary" href="{% url 'application' %}" role="button">apply now</a>
+
+
+                    </div>
+                  </div>
+
+                </div>
+
+ {%endfor%}
+{%endblock%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container mt-4">-->
+<!--<table class="table table-hover" id="example">-->
+<!--    <thead>-->
+<!--        <tr>-->
+<!--            <th>Sr.No</th>-->
+<!--            <th>Company Name</th>-->
+<!--            <th>Job Title</th>-->
+<!--            <th>Salary</th>-->
+<!--            <th>Location</th>-->
+<!--            <th>Created On</th>-->
+<!--            <th>Apply</th>-->
+<!--        </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--        {% for job in job %}-->
+<!--        <tr>-->
+<!--            <td>{{forloop.counter}}</td>-->
+<!--            <td>{{job.companyname}}</td>-->
+<!--            <td>{{job.jobTitle}}</td>-->
+<!--            <td>{{job.salary}}</td>-->
+<!--            <td>{{job.location}}</td>-->
+<!--            <td>{{job.date}}</td>-->
+
+<!--        </tr>-->
+<!--        {% endfor %}-->
+<!--    </tbody>-->
+<!--</table>-->
+<!--</div>-->
+
+

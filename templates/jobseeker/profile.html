@@ -1,0 +1,107 @@
+{% extends "jobseeker/new/Modified_files/index.html" %}
+{%load crispy_forms_tags %}
+{% block content %}
+
+
+<div class=" text-center rounded p-4">
+<div class="card text-center mb-3  ">
+  <div class="card-body card card-light-blue ">
+
+<div class="table-responsive">
+  <table class="table align-middle table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">Name</th>
+                              <th scope="col">location</th>
+                              <th scope="col">jobTitle</th>
+                              <th scope="col">Phone</th>
+                              <th scope="col">Email</th>
+                              <th scope="col">Qualification</th>
+                              <th scope="col">Experience</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for i in data %}
+                            <tr>
+                              <td scope="row">{{i.name}}</td>
+                              <td scope="row">{{i.location}}</td>
+                              <td scope="row">{{i.Required_job}}</td>
+                              <td scope="row">{{i.phone}}</td>
+                              <td scope="row">{{i.email}}</td>
+                              <td scope="row">{{i.Qualification}}</td>
+                              <td scope="row">{{i.Experience}}</td>
+                               <td><a href="{% url 'profile_update' i.id%}">
+                        <button type="button" class="btn btn-primary">Update</button>
+        </a></td>
+
+
+
+                            </tr>
+                            {% endfor %}
+                          </tbody>
+      </table>
+  </div>
+</div>
+</div>
+ </div>
+
+<!---->
+{%endblock%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container mt-4">-->
+<!--<table class="table table-hover" id="example">-->
+<!--    <thead>-->
+<!--        <tr>-->
+<!--            <th>Sr.No</th>-->
+<!--            <th>Company Name</th>-->
+<!--            <th>Job Title</th>-->
+<!--            <th>Salary</th>-->
+<!--            <th>Location</th>-->
+<!--            <th>Created On</th>-->
+<!--            <th>Apply</th>-->
+<!--        </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--        {% for job in job %}-->
+<!--        <tr>-->
+<!--            <td>{{forloop.counter}}</td>-->
+<!--            <td>{{job.companyname}}</td>-->
+<!--            <td>{{job.jobTitle}}</td>-->
+<!--            <td>{{job.salary}}</td>-->
+<!--            <td>{{job.location}}</td>-->
+<!--            <td>{{job.date}}</td>-->
+
+<!--        </tr>-->
+<!--        {% endfor %}-->
+<!--    </tbody>-->
+<!--</table>-->
+<!--</div>-->
+
+

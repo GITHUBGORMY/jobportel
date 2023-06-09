@@ -1,0 +1,14 @@
+{% extends "jobseeker/new/Modified_files/index.html" %}
+{%load crispy_forms_tags %}
+{% block content %}
+
+  <div class="card-body card card-light-blue">
+      <form method="post"enctype="multipart/form-data">
+                   {% csrf_token %}
+            {{Application_Form|crispy}}
+          <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Submit</button>
+      </form>
+
+  </div>
+
+{% endblock %}

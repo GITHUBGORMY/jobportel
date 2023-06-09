@@ -1,0 +1,43 @@
+{% extends "jobseeker/new/Modified_files/index.html" %}
+{%load crispy_forms_tags %}
+{% block content %}
+
+ <div class=" text-center rounded p-4">
+<div class="card text-center mb-3  ">
+  <div class="card-body card card-light-blue ">
+
+<div class="table-responsive">
+  <table class="table align-middle table table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">Companyname</th>
+                              <th scope="col">jobTitle</th>
+                              <th scope="col">Applicant</th>
+                              <th scope="col">Resume</th>
+                              <th scope="col">date</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for i in data %}
+                            <tr>
+                              <td scope="row">{{i.company}}</td>
+                              <td scope="row">{{i.job}}</td>
+                              <td scope="row">{{i.applicant}}</td>
+                                <td scope="row">
+          {% if i.resume %}
+    <embed    src="{{i.resume.url}}" width = "200" height = "50" style =" margin-left: auto; margin-right: auto; display: block;"></td>
+{% endif %}
+                              <td scope="row">{{i.date}}</td>
+
+     </td>
+
+
+                            </tr>
+                            {% endfor %}
+                          </tbody>
+      </table>
+  </div>
+</div>
+</div>
+ </div>
+{%endblock%}

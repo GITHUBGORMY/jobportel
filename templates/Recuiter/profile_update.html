@@ -1,0 +1,25 @@
+{% extends "Recuiter/index.html" %}
+{%load crispy_forms_tags %}
+{% block content %}
+<div class="row">
+            <h1 class="text-center display-4"> update</h1>
+</div>
+         <div class="row h-100 m-lg-7 mx-3 mt-6 mx-md-4 my-md-7">
+                 <div class="card  py-4 ">
+                   <div class="card-body px-2">
+      <form class="form-group row text-center center-form" method="post" enctype="multipart/form-data">
+                           {% csrf_token %}
+
+                  {{ form|crispy}}
+                           <input type="submit" class="btn btn-dark btn-block" value="update"/>
+                       </form>
+
+        </div>
+
+    </div>
+</div>
+  </div>
+</div>
+ </div>
+
+{% endblock %}
